@@ -17,13 +17,7 @@ let kind: InfovizoinTaskDefinition = {
 let taskProvider: vscode.Disposable | undefined;
 export function activate(_context: vscode.ExtensionContext): void {
 	console.log('Congratulations, your extension "Infovizion" is now active!');
-	setInternalIvtoolPath(_context.extensionUri.fsPath + '/dist/windows/ivtool.exe');
-
-	
-	const previewManager = new PreviewManager(_context.extensionUri);
-	_context.subscriptions.push(vscode.window.registerCustomEditorProvider(PreviewManager.viewType, previewManager, {
-		supportsMultipleEditorsPerDocument: true,
-	}))
+	setInternalIvtoolPath(_context.extensionUri.fsPath + '/dist/windows/ivtool.exe');	
 	_registerCommand(_context, 'infovizion-tools.expressions_to_json', () => {	
 		inqlikEditorTask( ['expression', 'convert-to-json'],'Qlik Expression. Convert to JSON');
 	});
@@ -33,6 +27,10 @@ export function activate(_context: vscode.ExtensionContext): void {
 	_registerCommand(_context, 'infovizion-tools.qvs_check', () => {	
 		qvsEditorTask( ['qvs', '--command', 'check'],'Check Qlik load script for errors');
 	});
+	_registerCommand(_context, 'infovizion-tools.qvs_check_directory', () => {	
+		qvsEditorTask( ['qvs', '--command', 'check_directory'],'Check all Qlik load scripts in target directory');
+	});
+
 	_registerCommand(_context, 'infovizion-tools.qvs_open', () => {	
 		qvsEditorTask( ['qvs', '--command', 'open'],'Open qvw file');
 	});
@@ -43,6 +41,10 @@ export function activate(_context: vscode.ExtensionContext): void {
 	vscode.workspace.onDidSaveTextDocument((document: vscode.TextDocument) => {
 		onDidSaveTextDocument(document);
 	});
+	const previewManager = new PreviewManager(_context.extensionUri);
+	_context.subscriptions.push(vscode.window.registerCustomEditorProvider(PreviewManager.viewType, previewManager, {
+		supportsMultipleEditorsPerDocument: true,
+	}));
 }
 
 export function deactivate(): void {
@@ -78,6 +80,8 @@ function _getProperty(propName: string): string {
 }
 
 function qvsEditorTask(args: string[], description: string) {
+	console.log('qvsEditorTask');
+
 	if (args.length == 0) {
 		var runCommandParam = vscode.workspace.getConfiguration().get('infovizion.1.runCommand','just_reload');
         args = ['qvs', '--command', runCommandParam];
@@ -94,6 +98,7 @@ function qvsEditorTask(args: string[], description: string) {
 	if (vscode.workspace.getConfiguration().get('infovizion.1.suppressVariablesCheck')) {
 	  args.push('--suppress-variables-check');
 	}
+	console.log('qvsEditorTask 1');
 	var senseMode = vscode.workspace.getConfiguration().get('infovizion.1.senseMode');
 	console.log(`qvsEditorTask ${senseMode}`);
 	if (senseMode) {

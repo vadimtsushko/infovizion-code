@@ -123,6 +123,11 @@
                 "command": "infovizion-tools.qvs_check",
                 "title": "Check Qlik load script",
                 "category": "Infovizion"
+            },
+            {
+                "command": "infovizion-tools.qvs_check_directory",
+                "title": "Check all Qlik load scripts in target directory",
+                "category": "Infovizion"
             }
         ],
         "keybindings": [
@@ -161,6 +166,11 @@
                 },
                 {
                     "command": "infovizion-tools.qvs_check",
+                    "when": "editorLangId == qlik",
+                    "group": "build"
+                },
+                {
+                    "command": "infovizion-tools.qvs_check_directory",
                     "when": "editorLangId == qlik",
                     "group": "build"
                 }

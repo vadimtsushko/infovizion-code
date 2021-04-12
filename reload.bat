@@ -9,5 +9,5 @@ FOR %%F IN (*.vsix) DO (
  goto fileFound
 )
 :fileFound
-call code --install-extension %filename%
+@REM call code --install-extension %filename%
 REM call code ..\..\app.infovizion\demo2_conf\conf

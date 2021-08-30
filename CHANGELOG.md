@@ -9,3 +9,7 @@
 - Check as one of the subcommand options in Run command
 - New command `Check directory` to check syntax in all QVS files in directory
 - Some efforts to synchronize syntax highlyting with syntax check by parsing functionality
+##  0.3.27 - 2021-04-13
+### Added
+- `GENERIC` load prefix
+- `NULLASVALUE` statement

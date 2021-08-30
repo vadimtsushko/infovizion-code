@@ -4,7 +4,7 @@
     "description": "Set of development tools used in InfoVizion for Qlik projects",
     "publisher": "infovizion",
     "license": "0BSD",
-    "version": "0.3.25",
+    "version": "0.3.27",
     "engines": {
         "vscode": "^1.52.0"
     },

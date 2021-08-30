@@ -17,7 +17,7 @@ let kind: InfovizoinTaskDefinition = {
 let taskProvider: vscode.Disposable | undefined;
 export function activate(_context: vscode.ExtensionContext): void {
 	console.log('Congratulations, your extension "Infovizion" is now active!');
-	setInternalIvtoolPath(_context.extensionUri.fsPath + '/dist/windows/ivtool.exe');	
+	setInternalIvtoolPath(_context.extensionUri.fsPath + '/dist/windows/ivtool.bat');	
 	_registerCommand(_context, 'infovizion-tools.expressions_to_json', () => {	
 		inqlikEditorTask( ['expression', 'convert-to-json'],'Qlik Expression. Convert to JSON');
 	});

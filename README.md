@@ -9,6 +9,7 @@ Set of developement tools used in InfoVizion for Qlik projects
 `Control Shift L`: opens windows on corresponding log file for last execution.
 
 `//#!QV_SUPPRESS_ERROR` comment suppress parsing errors for one QVS statement
+`//#!QV_SKIP_PARSING` comment suppress parsing errors for all remaining lines in file
 
 ## QVD Support:
 

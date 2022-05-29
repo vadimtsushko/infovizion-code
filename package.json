@@ -4,7 +4,7 @@
     "description": "Set of development tools used in InfoVizion for Qlik projects",
     "publisher": "infovizion",
     "license": "0BSD",
-    "version": "0.3.27",
+    "version": "0.3.28",
     "engines": {
         "vscode": "^1.52.0"
     },
@@ -80,7 +80,7 @@
                     "type": "string",
                     "default": "c:\\Program Files\\QlikView\\bin\\qv.exe",
                     "description": "Full path to QlikView Desktop executable"
-                },                
+                },
                 "infovizion.qlikview.qvwTemplate": {
                     "type": "string",
                     "default": "c:\\programs\\bin\\_newFileTemplate.qvw",

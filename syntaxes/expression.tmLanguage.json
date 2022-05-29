@@ -92,7 +92,7 @@
       "patterns": [
         {
           "name": "meta.tag.qlik-expressions",
-          "match": "(label|selectorLabel|format|family|pragma|type|calendar|width|backgroundColor):(.*)",
+          "match": "(label|selectorLabel|format|family|pragma|type|calendar|width|backgroundColor|fontColor|colorByExpression):(.*)",
           "captures": {
             "1": {
               "name": "entity.name.tag.qlik-expressions"

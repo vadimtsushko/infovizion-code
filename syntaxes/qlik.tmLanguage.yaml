@@ -135,7 +135,7 @@ repository:
     - name: keyword.control.qvs
       match: (&|/)
     - name: keyword.control.qvs
-      match: (?i)\b(AND|OR)\b
+      match: (?i)\b(NOT|AND|OR|XOR|BITNOT|BITAND|BITOR|BITXOR)\b
 
   qualifiers:
     patterns:

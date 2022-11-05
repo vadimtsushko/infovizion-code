@@ -2,7 +2,7 @@
     "name": "infovizion-tools",
     "displayName": "InfoVizion Tools",
     "description": "Set of development tools used in InfoVizion for Qlik projects",
-    "publisher": "infovizion",
+    "publisher": "infovizion-code",
     "license": "0BSD",
     "version": "0.3.28",
     "engines": {

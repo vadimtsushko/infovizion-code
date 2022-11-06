@@ -4,7 +4,7 @@
     "description": "Set of development tools used in InfoVizion for Qlik projects",
     "publisher": "infovizion-code",
     "license": "0BSD",
-    "version": "0.3.28",
+    "version": "0.3.29",
     "engines": {
         "vscode": "^1.52.0"
     },
@@ -52,6 +52,12 @@
                     "default": true,
                     "description": "Do not check for undefined variables in dollar sign expansion"
                 },
+                "infovizion.1.forceRewriteQvw": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "In QlikView mode always rewrite QVW file with personal template'"
+                },
+
                 "infovizion.1.runCommand": {
                     "type": [
                         "string"
@@ -78,7 +84,7 @@
                 },
                 "infovizion.qlikview.executable": {
                     "type": "string",
-                    "default": "c:\\Program Files\\QlikView\\bin\\qv.exe",
+                    "default": "c:\\Program Files\\QlikView\\qv.exe",
                     "description": "Full path to QlikView Desktop executable"
                 },
                 "infovizion.qlikview.qvwTemplate": {

@@ -17,7 +17,7 @@ let kind: InfovizoinTaskDefinition = {
 let taskProvider: vscode.Disposable | undefined;
 export function activate(_context: vscode.ExtensionContext): void {
 	console.log('Congratulations, your extension "Infovizion" is now active!');
-	setInternalIvtoolPath(_context.extensionUri.fsPath + '/dist/windows/ivtool.bat');	
+	setInternalIvtoolPath(_context.extensionUri.fsPath + '/dist/windows/ivtool.exe');	
 	_registerCommand(_context, 'infovizion-tools.expressions_to_json', () => {	
 		inqlikEditorTask( ['expression', 'convert-to-json'],'Qlik Expression. Convert to JSON');
 	});
@@ -98,6 +98,10 @@ function qvsEditorTask(args: string[], description: string) {
 	if (vscode.workspace.getConfiguration().get('infovizion.1.suppressVariablesCheck')) {
 	  args.push('--suppress-variables-check');
 	}
+	if (vscode.workspace.getConfiguration().get('infovizion.1.forceRewriteQvw')) {
+		args.push('--force-rewrite-qvw');
+	  }
+  
 	console.log('qvsEditorTask 1');
 	var senseMode = vscode.workspace.getConfiguration().get('infovizion.1.senseMode');
 	console.log(`qvsEditorTask ${senseMode}`);
